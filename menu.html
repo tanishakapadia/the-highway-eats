@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>THE GASTRONOMY COLLECTION | The Highway Eats</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0D0D0D; color: #F7F5F0; }
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .thin-border { border-color: rgba(247, 245, 240, 0.1); }
+    </style>
+</head>
+<body x-data="{ foodTab: 'veg' }">
+
+    <!-- NAV BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b thin-border">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-xl tracking-widest font-light">THE HIGHWAY EATS</a>
+            <div class="hidden lg:flex items-center gap-10 text-xs tracking-widest uppercase text-[#F7F5F0]/70">
+                <a href="index.html" class="hover:text-[#C5A880] transition-colors">Home</a>
+                <a href="menu.html" class="text-[#C5A880]">Gastronomy</a>
+                <a href="about.html" class="hover:text-[#C5A880] transition-colors">Philosophy</a>
+                <a href="visit.html" class="hover:text-[#C5A880] transition-colors">Contact</a>
+            </div>
+            <a href="tel:09974593530" class="hidden lg:block border border-[#C5A880] text-[#C5A880] px-6 py-3 text-xs tracking-widest uppercase hover:bg-[#C5A880] hover:text-[#0D0D0D] transition-all duration-300">Reserve Stay</a>
+        </div>
+    </nav>
+
+    <!-- MENU HERO -->
+    <section class="pt-40 pb-20 max-w-7xl mx-auto px-6">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
+            <p class="text-xs tracking-widest uppercase text-[#C5A880]">Culinary Portfolio</p>
+            <h1 class="font-serif text-4xl md:text-6xl font-light">Pure Vegetarian Gastronomy</h1>
+            <div class="w-12 h-px bg-[#C5A880]/30 mx-auto mt-4"></div>
+        </div>
+
+        <!-- Category Controls -->
+        <div class="flex justify-center gap-6 border-b thin-border pb-6 mb-16 text-xs tracking-widest uppercase">
+            <button @click="foodTab = 'veg'" :class="foodTab === 'veg' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">01 / Curated Food Collection</button>
+            <button @click="foodTab = 'beverages'" :class="foodTab === 'beverages' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">02 / Mocktails & Refreshments</button>
+        </div>
+
+        <!-- FOOD SECTIONS -->
+        <div x-show="foodTab === 'veg'" class="space-y-24" x-transition>
+            <!-- Starters Sub-grid -->
+            <div class="space-y-8">
+                <h3 class="font-serif text-2xl italic text-[#C5A880]">Fine Appetizers & Small Bites</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/14.webp" alt="Tandoori Paneer Kebab" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Tandoori Paneer Kebab</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Flame-kissed cottage cheese chunks drizzled with house beetroot reduction cream.</p>
+                    </div>
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/17.webp" alt="Crispy Premium Spring Rolls" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Crispy Premium Spring Rolls</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Hand-rolled wrappers stuffed with seasoned crisp garden vegetables.</p>
+                    </div>
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/16.webp" alt="Wok-Tossed Dry Manchurian" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Wok-Tossed Dry Manchurian</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Gourmet crispy vegetable clusters glazed safely in a deep soy sauce coat.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mains Sub-grid -->
+            <div class="space-y-8">
+                <h3 class="font-serif text-2xl italic text-[#C5A880]">Signature Authentic Main Plates</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/21.webp" alt="Handcrafted Cone Dosa" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Architectural Cone Dosa</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Handcrafted tall golden Dosa served cleanly alongside traditional lentil sambar and house chutneys.</p>
+                    </div>
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/18.webp" alt="Premium Paneer Lababdar" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Premium Paneer Lababdar & Naan</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Luxurious rich cashew tomato curry gravy studded cleanly with paneer slices.</p>
+                    </div>
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/15.webp" alt="Clay-Pot Slow Dum Biryani" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Clay-Pot Slow Dum Biryani</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Aromatic layered basmati grains infused beautifully with mint leaf frames and spices.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fusion Sub-grid -->
+            <div class="space-y-8">
+                <h3 class="font-serif text-2xl italic text-[#C5A880]">Global Wok & Sizzlers</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/19.webp" alt="Sizzling Mexican Rice Bowl" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Sizzling Mexican Bowl</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Spiced rice crowned elegantly with crisp salted tortilla chips and cheese lines.</p>
+                    </div>
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/23.webp" alt="Wok-Fried Schezwan Rice" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Wok-Fried Schezwan Rice</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Fiery rice tossed evenly over quick intense flames with fresh scallions.</p>
+                    </div>
+                    <div class="bg-white/5 border thin-border p-4">
+                        <img src="images/12.webp" alt="Signature Indo-Chinese Dry Plate" class="w-full h-64 object-cover mb-4">
+                        <h4 class="font-serif text-lg text-white">Chop Chop Dry Platter</h4>
+                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Curated dry-fried vegetable medleys for quick crisp flavor explosions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BEVERAGES SECTIONS -->
+        <div x-show="foodTab === 'beverages'" class="grid grid-cols-1 md:grid-cols-3 gap-8" x-transition>
+            <div class="bg-white/5 border thin-border p-4">
+                <img src="images/26.webp" alt="Electric Blue Lagoon" class="w-full h-80 object-cover mb-4">
+                <h4 class="font-serif text-lg text-white">Electric Blue Lagoon</h4>
+                <p class="text-xs text-[#F7F5F0]/50 mt-2">Refreshing carbonated cooler balanced with bright citrus profiles.</p>
+            </div>
+            <div class="bg-white/5 border thin-border p-4">
+                <img src="images/27.webp" alt="Artisanal Mango Shake" class="w-full h-80 object-cover mb-4">
+                <h4 class="font-serif text-lg text-white">Artisanal Mango Shakes</h4>
+                <p class="text-xs text-[#F7F5F0]/50 mt-2">Thick milk combinations sweetened naturally using rich Alphonso fruit pulps.</p>
+            </div>
+            <div class="bg-white/5 border thin-border p-4">
+                <img src="images/25.webp" alt="Symphony Chocolate Sundae" class="w-full h-80 object-cover mb-4">
+                <h4 class="font-serif text-lg text-white">Symphony Chocolate Sundae</h4>
+                <p class="text-xs text-[#F7F5F0]/50 mt-2">Decadent cocoa layers served alongside premium rolled chocolate crunch wafers.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t thin-border text-center text-[10px] tracking-[0.2em] uppercase text-[#F7F5F0]/30 bg-[#0A0A0A]">
+        <p>© 2026 THE HIGHWAY EATS. Engineered for Absolute Purity.</p>
+    </footer>
+
+</body>
+</html>
