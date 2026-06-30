@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VISIT US | The Highway Eats</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0D0D0D; color: #F7F5F0; }
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+        .thin-border { border-color: rgba(247, 245, 240, 0.1); }
+    </style>
+</head>
+<body>
+
+    <!-- NAV BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b thin-border">
+        <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
+            <a href="index.html" class="font-serif text-xl tracking-widest font-light">THE HIGHWAY EATS</a>
+            <div class="hidden lg:flex items-center gap-10 text-xs tracking-widest uppercase text-[#F7F5F0]/70">
+                <a href="index.html" class="hover:text-[#C5A880] transition-colors">Home</a>
+                <a href="about.html" class="hover:text-[#C5A880] transition-colors">Philosophy</a>
+                <a href="visit.html" class="text-[#C5A880]">Contact</a>
+            </div>
+            <a href="tel:09974593530" class="hidden lg:block border border-[#C5A880] text-[#C5A880] px-6 py-3 text-xs tracking-widest uppercase hover:bg-[#C5A880] hover:text-[#0D0D0D] transition-all duration-300">Reserve Stay</a>
+        </div>
+    </nav>
+
+    <!-- CONTACT CONTAINER -->
+    <section class="pt-40 pb-24 max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div class="space-y-10">
+            <div class="space-y-2">
+                <p class="text-xs tracking-widest uppercase text-[#C5A880]">Navigation Matrix</p>
+                <h1 class="font-serif text-4xl md:text-5xl font-light">Connect With Us</h1>
+            </div>
+            
+            <div class="space-y-6 text-xs tracking-widest uppercase text-[#F7F5F0]/70 font-light">
+                <p class="text-sm font-sans text-white tracking-widest">THE HIGHWAY EATS RESORT</p>
+                <p class="normal-case tracking-wide text-sm text-[#F7F5F0]/50">
+                    📍 National Highway, near Trimandir, Varnama, Por, Vadodara, Gujarat 391243
+                </p>
+                <p>📞 Phone: <a href="tel:09974593530" class="text-[#C5A880] underline">099745 93530</a></p>
+                <p>⏰ Timing: Open Daily / 07:00 AM – 01:00 AM</p>
+            </div>
+            
+            <!-- INSTAGRAM IMAGES FEED (14, 21, 26, 11) -->
+            <div class="pt-6 border-t thin-border space-y-4">
+                <p class="text-[10px] tracking-[0.3em] uppercase text-[#C5A880]">Live @the_highway_eats</p>
+                <div class="grid grid-cols-4 gap-2">
+                    <img src="images/14.webp" alt="Instagram Item 1" class="w-full h-20 object-cover opacity-50 hover:opacity-100 transition-opacity duration-300">
+                    <img src="images/21.webp" alt="Instagram Item 2" class="w-full h-20 object-cover opacity-50 hover:opacity-100 transition-opacity duration-300">
+                    <img src="images/26.webp" alt="Instagram Item 3" class="w-full h-20 object-cover opacity-50 hover:opacity-100 transition-opacity duration-300">
+                    <img src="images/11.webp" alt="Instagram Item 4" class="w-full h-20 object-cover opacity-50 hover:opacity-100 transition-opacity duration-300">
+                </div>
+            </div>
+        </div>
+
+        <!-- GOOGLE MAPS PLACEHOLDER CONTAINER -->
+        <div class="w-full h-[450px] bg-white/5 border thin-border flex flex-col justify-center items-center p-8 text-center relative">
+            <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#F7F5F0_1px,transparent_1px)] [background-size:24px_24px]"></div>
+            <p class="font-serif text-xl tracking-wider text-[#C5A880]">Interactive Map Slot</p>
+            <p class="text-xs text-[#F7F5F0]/40 max-w-xs mt-2 font-light">
+                Paste your custom Google Business iframe maps script directly inside this container layout block later.
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="py-12 border-t thin-border text-center text-[10px] tracking-[0.2em] uppercase text-[#F7F5F0]/30 bg-[#0A0A0A]">
+        <p>© 2026 THE HIGHWAY EATS. Engineered for Absolute Purity.</p>
+    </footer>
+
+</body>
+</html>
