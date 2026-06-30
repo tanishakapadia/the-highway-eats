@@ -15,7 +15,7 @@
         .thin-border { border-color: rgba(247, 245, 240, 0.1); }
     </style>
 </head>
-<body x-data="{ foodTab: 'veg' }">
+<body x-data="{ currentTab: 'starters' }">
 
     <!-- NAV BAR -->
     <nav class="fixed top-0 left-0 w-full z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b thin-border">
@@ -31,105 +31,187 @@
         </div>
     </nav>
 
-    <!-- MENU HERO -->
-    <section class="pt-40 pb-20 max-w-7xl mx-auto px-6">
+    <!-- MENU CONTAINER -->
+    <section class="pt-40 pb-24 max-w-7xl mx-auto px-6">
         <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <p class="text-xs tracking-widest uppercase text-[#C5A880]">Culinary Portfolio</p>
-            <h1 class="font-serif text-4xl md:text-6xl font-light">Pure Vegetarian Gastronomy</h1>
+            <p class="text-xs tracking-widest uppercase text-[#C5A880]">Pure Vegetarian Menu</p>
+            <h1 class="font-serif text-4xl md:text-6xl font-light">The Gastronomy Collection</h1>
             <div class="w-12 h-px bg-[#C5A880]/30 mx-auto mt-4"></div>
         </div>
 
-        <!-- Category Controls -->
-        <div class="flex justify-center gap-6 border-b thin-border pb-6 mb-16 text-xs tracking-widest uppercase">
-            <button @click="foodTab = 'veg'" :class="foodTab === 'veg' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">01 / Curated Food Collection</button>
-            <button @click="foodTab = 'beverages'" :class="foodTab === 'beverages' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">02 / Mocktails & Refreshments</button>
+        <!-- Premium Tab Switchers -->
+        <div class="flex flex-wrap justify-center gap-6 border-b thin-border pb-6 mb-16 text-xs tracking-widest uppercase">
+            <button @click="currentTab = 'starters'" :class="currentTab === 'starters' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Starters & Delights</button>
+            <button @click="currentTab = 'mains'" :class="currentTab === 'mains' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Mains & Breads</button>
+            <button @click="currentTab = 'chinese-mexican'" :class="currentTab === 'chinese-mexican' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Global Cuisines</button>
+            <button @click="currentTab = 'refreshments'" :class="currentTab === 'refreshments' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Sweets & Beverages</button>
         </div>
 
-        <!-- FOOD SECTIONS -->
-        <div x-show="foodTab === 'veg'" class="space-y-24" x-transition>
-            <!-- Starters Sub-grid -->
-            <div class="space-y-8">
-                <h3 class="font-serif text-2xl italic text-[#C5A880]">Fine Appetizers & Small Bites</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/14.webp" alt="Tandoori Paneer Kebab" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Tandoori Paneer Kebab</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Flame-kissed cottage cheese chunks drizzled with house beetroot reduction cream.</p>
-                    </div>
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/17.webp" alt="Crispy Premium Spring Rolls" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Crispy Premium Spring Rolls</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Hand-rolled wrappers stuffed with seasoned crisp garden vegetables.</p>
-                    </div>
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/16.webp" alt="Wok-Tossed Dry Manchurian" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Wok-Tossed Dry Manchurian</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Gourmet crispy vegetable clusters glazed safely in a deep soy sauce coat.</p>
-                    </div>
-                </div>
+        <!-- TAB 1: STARTERS & DELIGHTS -->
+        <div x-show="currentTab === 'starters'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Signature Starters</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Mexican Spiced Tikki ★</li>
+                    <li>Mexican Tacos</li>
+                    <li>Mexican Cheese Loaded Nachos</li>
+                    <li>Hara Bhara Kebab</li>
+                    <li>Veg Manchurian</li>
+                    <li>Veg Spring Roll</li>
+                    <li>Dragon Crispy Potatoes 🌶️</li>
+                    <li>Honey Chilly Potato</li>
+                    <li>Sauted Vegetables</li>
+                    <li>Papad Karara Kebab</li>
+                    <li>Crispy Veg</li>
+                    <li>Crispy Veg Lollipop ★</li>
+                    <li>Chilli Paneer ★</li>
+                    <li>Schezwan Paneer Chilli 🌶️</li>
+                    <li>Salt & Pepper Baby Corn Potato</li>
+                    <li>Lal Mirch Paneer Tikka 🌶️</li>
+                    <li>Paneer Pudina Tikka</li>
+                    <li>Paneer Multani Tikka</li>
+                    <li>Paneer Malai Tikka</li>
+                    <li>Cheese Balls</li>
+                    <li>Crispy Cheese Potato Roll</li>
+                    <li>Mushroom Balls</li>
+                    <li>Tandoori Mushroom Tikka ★</li>
+                    <li>Mushroom Chilli</li>
+                    <li>Mushroom Babycorn Tikka</li>
+                    <li>Veg Cheese Seekh Kebab</li>
+                    <li>Roasted Veg Seekh Kebab</li>
+                    <li>Ruby Beetroot Kebab ★</li>
+                    <li>Tandoori Platter</li>
+                    <li>Highway Special Rajwadi Kebab ★</li>
+                </ul>
             </div>
-
-            <!-- Mains Sub-grid -->
-            <div class="space-y-8">
-                <h3 class="font-serif text-2xl italic text-[#C5A880]">Signature Authentic Main Plates</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/21.webp" alt="Handcrafted Cone Dosa" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Architectural Cone Dosa</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Handcrafted tall golden Dosa served cleanly alongside traditional lentil sambar and house chutneys.</p>
-                    </div>
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/18.webp" alt="Premium Paneer Lababdar" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Premium Paneer Lababdar & Naan</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Luxurious rich cashew tomato curry gravy studded cleanly with paneer slices.</p>
-                    </div>
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/15.webp" alt="Clay-Pot Slow Dum Biryani" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Clay-Pot Slow Dum Biryani</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Aromatic layered basmati grains infused beautifully with mint leaf frames and spices.</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Fusion Sub-grid -->
-            <div class="space-y-8">
-                <h3 class="font-serif text-2xl italic text-[#C5A880]">Global Wok & Sizzlers</h3>
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/19.webp" alt="Sizzling Mexican Rice Bowl" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Sizzling Mexican Bowl</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Spiced rice crowned elegantly with crisp salted tortilla chips and cheese lines.</p>
-                    </div>
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/23.webp" alt="Wok-Fried Schezwan Rice" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Wok-Fried Schezwan Rice</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Fiery rice tossed evenly over quick intense flames with fresh scallions.</p>
-                    </div>
-                    <div class="bg-white/5 border thin-border p-4">
-                        <img src="images/12.webp" alt="Signature Indo-Chinese Dry Plate" class="w-full h-64 object-cover mb-4">
-                        <h4 class="font-serif text-lg text-white">Chop Chop Dry Platter</h4>
-                        <p class="text-xs text-[#F7F5F0]/50 mt-2">Curated dry-fried vegetable medleys for quick crisp flavor explosions.</p>
-                    </div>
-                </div>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Baked & Cheesy Delights</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80 mb-12">
+                    <li>Baked Macaroni</li>
+                    <li>Baked Macaroni With Pineapple</li>
+                    <li>Baked Spaghetti With Pineapple</li>
+                    <li>Baked Mexican Trio ★</li>
+                    <li>Baked Creamy Cheese Lasagna</li>
+                </ul>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Sizzling Platters</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Mixed Veg Grilled Sizzler</li>
+                    <li>Mexican Fiesta Sizzler ★</li>
+                    <li>Paneer Stick Sizzler</li>
+                    <li>Chinese Sizzler</li>
+                    <li>Highway Special Sizzler</li>
+                    <li>Sizzling Mexican Tex-Mex</li>
+                </ul>
             </div>
         </div>
 
-        <!-- BEVERAGES SECTIONS -->
-        <div x-show="foodTab === 'beverages'" class="grid grid-cols-1 md:grid-cols-3 gap-8" x-transition>
-            <div class="bg-white/5 border thin-border p-4">
-                <img src="images/26.webp" alt="Electric Blue Lagoon" class="w-full h-80 object-cover mb-4">
-                <h4 class="font-serif text-lg text-white">Electric Blue Lagoon</h4>
-                <p class="text-xs text-[#F7F5F0]/50 mt-2">Refreshing carbonated cooler balanced with bright citrus profiles.</p>
+        <!-- TAB 2: MAINS & BREADS -->
+        <div x-show="currentTab === 'mains'" class="grid grid-cols-1 md:grid-cols-3 gap-12" x-transition>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Rice Collections</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Steamed Basmati Rice</li>
+                    <li>Jeera Rice</li>
+                    <li>Dal Khichdi ★</li>
+                    <li>Tadka Dal Khichdi</li>
+                    <li>Matar Pulao (White)</li>
+                    <li>Veg Pulao</li>
+                    <li>Veg Biryani</li>
+                    <li>Hyderabadi Veg Biryani</li>
+                    <li>Highway Special Dum Biryani ★ <span class="text-xs text-[#C5A880]/60 block">(Served with Raita)</span></li>
+                </ul>
             </div>
-            <div class="bg-white/5 border thin-border p-4">
-                <img src="images/27.webp" alt="Artisanal Mango Shake" class="w-full h-80 object-cover mb-4">
-                <h4 class="font-serif text-lg text-white">Artisanal Mango Shakes</h4>
-                <p class="text-xs text-[#F7F5F0]/50 mt-2">Thick milk combinations sweetened naturally using rich Alphonso fruit pulps.</p>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Tandoori Breads & Tawa</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Plain Chapati / Butter Chapati</li>
+                    <li>Butter Tawa Paratha</li>
+                    <li>Tawa Aloo Paratha ★</li>
+                    <li>Plain Roti / Butter Roti</li>
+                    <li>Naan / Kulcha / Paratha</li>
+                    <li>Butter Naan / Kulcha / Paratha</li>
+                    <li>Stuffed Naan / Kulcha</li>
+                    <li>Lachha Paratha</li>
+                    <li>Hariyali Naan ★</li>
+                    <li>Garlic Naan / Chilli Garlic Naan</li>
+                    <li>Cheese Naan</li>
+                    <li>Cheese Chilli Garlic Naan ★</li>
+                    <li>Missi Roti / Onion Kulcha</li>
+                    <li>Tandoori Aloo Paratha</li>
+                    <li>Rotis Basket</li>
+                </ul>
             </div>
-            <div class="bg-white/5 border thin-border p-4">
-                <img src="images/25.webp" alt="Symphony Chocolate Sundae" class="w-full h-80 object-cover mb-4">
-                <h4 class="font-serif text-lg text-white">Symphony Chocolate Sundae</h4>
-                <p class="text-xs text-[#F7F5F0]/50 mt-2">Decadent cocoa layers served alongside premium rolled chocolate crunch wafers.</p>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Curated Combos & Thalis</h3>
+                <ul class="space-y-6 text-sm text-[#F7F5F0]/80">
+                    <li>
+                        <span class="block text-white font-medium">CHOLE KULCHE PLATTER ★</span>
+                        <span class="text-xs text-[#F7F5F0]/50">Chhole, 2 Kulche, Salad & Raita</span>
+                    </li>
+                    <li>
+                        <span class="block text-white font-medium">CHOLE BHATORE PLATTER</span>
+                        <span class="text-xs text-[#F7F5F0]/50">Chhole, 2 Bhatore, Salad & Raita</span>
+                    </li>
+                    <li>
+                        <span class="block text-white font-medium">HIGHWAY EXECUTIVE THALI</span>
+                        <span class="text-xs text-[#F7F5F0]/50">1 Veg. Subzi, 1 Paneer Subzi, Dal Fry, Jeera Rice, 3 Roti, Salad, Papad, Butter Milk & Sweet</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 3: GLOBAL CUISINES -->
+        <div x-show="currentTab === 'chinese-mexican'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Mexican Specials</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Mexican Crunch Bhel ★</li>
+                    <li>Mexican Rice with Salsa</li>
+                    <li>Mexican Veg Hot Pot ★</li>
+                    <li>Mexican Curry with Rice</li>
+                    <li>Mexican Fried Rice / Corn Fried Rice</li>
+                    <li>Saut&eacute;ed Vegetable with Rice</li>
+                    <li>Creamy White Sauce Pasta</li>
+                    <li>Classic Red Sauce Pasta</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Chinese Cuisine</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Schezwan Fried Rice 🌶️ / Veg Fried Rice</li>
+                    <li>Manchurian Fried Rice / Mushroom Fried Rice</li>
+                    <li>Chop Suey <span class="text-xs text-[#F7F5F0]/40">(Chinese / American)</span></li>
+                    <li>Gobi Manchurian / Veg Manchurian Gravy</li>
+                    <li>Veg Hakka Noodles / Schezwan Noodles 🌶️</li>
+                    <li>Manchurian Noodles</li>
+                    <li>Chilli Paneer Gravy</li>
+                    <li>Crispy Chinese Bhel ★</li>
+                    <li>Schezwan Triple Fried Rice</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- TAB 4: SWEETS & BEVERAGES -->
+        <div x-show="currentTab === 'refreshments'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Gourmet Ice Creams</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Vanilla / Vanilla Brownie Dip</li>
+                    <li>Strawberry / Kaju Draksh</li>
+                    <li>Almond Carnival / Butterscotch</li>
+                    <li>Cookies & Cream / Chocolate Chips</li>
+                    <li>American Nuts / Kesar Pista / Rajbhog</li>
+                    <li>Cone / Candy</li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Desserts & Shakes</h3>
+                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+                    <li>Gulab Jamun <span class="text-xs text-[#F7F5F0]/40">(2 Pcs)</span></li>
+                    <li>Hot Gulab Jamun With Vanilla Ice Cream ★</li>
+                    <li>Milkshake ★ <span class="text-xs text-[#F7F5F0]/50 block">(Vanilla / Strawberry / Mango / Chocolate / Butterscotch / Rajbhog / Cookies & Cream / Kesar Pista)</span></li>
+                    <li>Fresh Fruit Shake ★ <span class="text-xs text-[#F7F5F0]/50 block">(Banana / Watermelon / Chikoo)</span></li>
+                </ul>
             </div>
         </div>
     </section>
