@@ -1,0 +1,31 @@
+/* Base Layout Resets */
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #F7F5F0;
+    color: #0D0D0D;
+    overflow-x: hidden;
+}
+
+.font-serif {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* 3D Depth Viewport Engine */
+.perspective-container {
+    perspective: 1000px;
+    transform-style: preserve-3d;
+}
+
+/* Dynamic 3D Element Layer Card */
+.three-d-card {
+    transition: transform 0.1s ease-out, box-shadow 0.3s ease;
+    transform-style: preserve-3d;
+    will-change: transform;
+}
+
+/* Pushes text layers out on the Z-axis for a floating 3D effect */
+.three-d-card h3, 
+.three-d-card img,
+.three-d-card p {
+    transform: translateZ(30px);
+}
