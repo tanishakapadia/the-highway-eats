@@ -4,54 +4,53 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>THE GASTRONOMY COLLECTION | The Highway Eats</title>
+    <!-- Tailwind CSS Platform CDN -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,400&family=Plus+Jakarta+Sans:wght@200;300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #0D0D0D; color: #F7F5F0; }
-        .font-serif { font-family: 'Cormorant Garamond', serif; }
-        .thin-border { border-color: rgba(247, 245, 240, 0.1); }
-    </style>
 </head>
 <body x-data="{ currentTab: 'starters' }">
 
-    <!-- NAV BAR -->
-    <nav class="fixed top-0 left-0 w-full z-50 bg-[#0D0D0D]/90 backdrop-blur-md border-b thin-border">
+    <!-- NAVIGATION BAR -->
+    <nav class="fixed top-0 left-0 w-full z-50 bg-[#F7F5F0]/80 backdrop-blur-md border-b border-[#0D0D0D]/5">
         <div class="max-w-7xl mx-auto px-6 h-24 flex items-center justify-between">
-            <a href="index.html" class="font-serif text-xl tracking-widest font-light">THE HIGHWAY EATS</a>
-            <div class="hidden lg:flex items-center gap-10 text-xs tracking-widest uppercase text-[#F7F5F0]/70">
-                <a href="index.html" class="hover:text-[#C5A880] transition-colors">Home</a>
-                <a href="menu.html" class="text-[#C5A880]">Gastronomy</a>
-                <a href="about.html" class="hover:text-[#C5A880] transition-colors">Philosophy</a>
-                <a href="visit.html" class="hover:text-[#C5A880] transition-colors">Contact</a>
+            <a href="index.html" class="font-serif text-3xl font-semibold tracking-wider text-[#0D0D0D]">THE HIGHWAY EATS</a>
+            <div class="hidden lg:flex items-center gap-12 text-sm font-semibold tracking-widest uppercase">
+                <a href="index.html" class="text-[#0D0D0D]/70 hover:text-[#C5A880] transition-colors pb-1">Home</a>
+                <a href="menu.html" class="text-[#C5A880] border-b-2 border-[#C5A880] pb-1">Menu</a>
+                <a href="about.html" class="text-[#0D0D0D]/70 hover:text-[#C5A880] transition-colors pb-1">About</a>
+                <a href="visit.html" class="text-[#0D0D0D]/70 hover:text-[#C5A880] transition-colors pb-1">Visit</a>
             </div>
-            <a href="tel:09974593530" class="hidden lg:block border border-[#C5A880] text-[#C5A880] px-6 py-3 text-xs tracking-widest uppercase hover:bg-[#C5A880] hover:text-[#0D0D0D] transition-all duration-300">Reserve Stay</a>
+            <a href="tel:09974593530" class="hidden lg:block bg-[#0D0D0D] text-[#F7F5F0] px-8 py-4 text-xs font-bold uppercase tracking-widest hover:bg-[#C5A880] hover:text-[#0D0D0D] transition-all duration-300">Book Table</a>
         </div>
     </nav>
 
-    <!-- MENU CONTAINER -->
-    <section class="pt-40 pb-24 max-w-7xl mx-auto px-6">
-        <div class="text-center max-w-3xl mx-auto space-y-4 mb-16">
-            <p class="text-xs tracking-widest uppercase text-[#C5A880]">Pure Vegetarian Menu</p>
-            <h1 class="font-serif text-4xl md:text-6xl font-light">The Gastronomy Collection</h1>
-            <div class="w-12 h-px bg-[#C5A880]/30 mx-auto mt-4"></div>
+    <!-- MENU HERO DISPLAY -->
+    <section class="pt-40 pb-24 max-w-7xl mx-auto px-6 perspective-container">
+        <div class="text-center max-w-3xl mx-auto space-y-4 mb-20">
+            <p class="text-xs tracking-[0.3em] uppercase text-[#C5A880] font-bold">Pure Vegetarian Gastronomy</p>
+            <h1 class="font-serif text-5xl md:text-7xl font-light text-[#0D0D0D]">The Menu Collection</h1>
+            <div class="w-16 h-0.5 bg-[#C5A880] mx-auto mt-4"></div>
         </div>
 
-        <!-- Premium Tab Switchers -->
-        <div class="flex flex-wrap justify-center gap-6 border-b thin-border pb-6 mb-16 text-xs tracking-widest uppercase">
-            <button @click="currentTab = 'starters'" :class="currentTab === 'starters' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Starters & Delights</button>
-            <button @click="currentTab = 'mains'" :class="currentTab === 'mains' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Mains & Breads</button>
-            <button @click="currentTab = 'chinese-mexican'" :class="currentTab === 'chinese-mexican' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Global Cuisines</button>
-            <button @click="currentTab = 'refreshments'" :class="currentTab === 'refreshments' ? 'text-[#C5A880]' : 'text-[#F7F5F0]/40'" class="pb-2 transition-colors">Sweets & Beverages</button>
+        <!-- Filter Tab Controls -->
+        <div class="flex flex-wrap justify-center gap-8 border-b border-[#0D0D0D]/5 pb-6 mb-16 text-sm font-semibold tracking-widest uppercase">
+            <button @click="currentTab = 'starters'" :class="currentTab === 'starters' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : 'text-[#0D0D0D]/40'" class="pb-2 transition-all duration-300">Starters & Delights</button>
+            <button @click="currentTab = 'mains'" :class="currentTab === 'mains' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : 'text-[#0D0D0D]/40'" class="pb-2 transition-all duration-300">Mains & Thalis</button>
+            <button @click="currentTab = 'global'" :class="currentTab === 'global' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : 'text-[#0D0D0D]/40'" class="pb-2 transition-all duration-300">Global Cuisine</button>
+            <button @click="currentTab = 'sweets'" :class="currentTab === 'sweets' ? 'text-[#C5A880] border-b-2 border-[#C5A880]' : 'text-[#0D0D0D]/40'" class="pb-2 transition-all duration-300">Sweets & Drinks</button>
         </div>
 
         <!-- TAB 1: STARTERS & DELIGHTS -->
-        <div x-show="currentTab === 'starters'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Signature Starters</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+        <div x-show="currentTab === 'starters'" class="grid grid-cols-1 lg:grid-cols-2 gap-16" x-transition>
+            <!-- 3D Card Left -->
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-xl border border-[#0D0D0D]/5" data-tilt>
+                <img src="images/14.webp" alt="Appetizers" class="w-full h-64 object-cover rounded-xl mb-6 pointer-events-none">
+                <h3 class="font-serif text-3xl font-medium text-[#0D0D0D] mb-6 border-b border-[#0D0D0D]/5 pb-2">Signature Starters</h3>
+                <ul class="space-y-3 text-base text-[#0D0D0D]/70 font-medium grid grid-cols-1 md:grid-cols-2 gap-x-4">
                     <li>Mexican Spiced Tikki ★</li>
                     <li>Mexican Tacos</li>
                     <li>Mexican Cheese Loaded Nachos</li>
@@ -60,7 +59,7 @@
                     <li>Veg Spring Roll</li>
                     <li>Dragon Crispy Potatoes 🌶️</li>
                     <li>Honey Chilly Potato</li>
-                    <li>Sauted Vegetables</li>
+                    <li>Sautéed Vegetables</li>
                     <li>Papad Karara Kebab</li>
                     <li>Crispy Veg</li>
                     <li>Crispy Veg Lollipop ★</li>
@@ -84,32 +83,39 @@
                     <li>Highway Special Rajwadi Kebab ★</li>
                 </ul>
             </div>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Baked & Cheesy Delights</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80 mb-12">
-                    <li>Baked Macaroni</li>
-                    <li>Baked Macaroni With Pineapple</li>
-                    <li>Baked Spaghetti With Pineapple</li>
-                    <li>Baked Mexican Trio ★</li>
-                    <li>Baked Creamy Cheese Lasagna</li>
-                </ul>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Sizzling Platters</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
-                    <li>Mixed Veg Grilled Sizzler</li>
-                    <li>Mexican Fiesta Sizzler ★</li>
-                    <li>Paneer Stick Sizzler</li>
-                    <li>Chinese Sizzler</li>
-                    <li>Highway Special Sizzler</li>
-                    <li>Sizzling Mexican Tex-Mex</li>
-                </ul>
+            <!-- 3D Card Right -->
+            <div class="space-y-8">
+                <div class="three-d-card bg-white p-8 rounded-2xl shadow-lg border border-[#0D0D0D]/5" data-tilt>
+                    <h3 class="font-serif text-3xl font-medium text-[#0D0D0D] mb-4 border-b border-[#0D0D0D]/5 pb-2">Baked & Cheesy Delights</h3>
+                    <ul class="space-y-3 text-base text-[#0D0D0D]/70 font-medium">
+                        <li>Baked Macaroni</li>
+                        <li>Baked Macaroni With Pineapple</li>
+                        <li>Baked Spaghetti With Pineapple</li>
+                        <li>Baked Mexican Trio ★</li>
+                        <li>Baked Creamy Cheese Lasagna</li>
+                    </ul>
+                </div>
+                <div class="three-d-card bg-white p-8 rounded-2xl shadow-lg border border-[#0D0D0D]/5" data-tilt>
+                    <img src="images/19.webp" alt="Sizzlers" class="w-full h-48 object-cover rounded-xl mb-4 pointer-events-none">
+                    <h3 class="font-serif text-3xl font-medium text-[#0D0D0D] mb-4 border-b border-[#0D0D0D]/5 pb-2">Sizzling Platters</h3>
+                    <ul class="space-y-3 text-base text-[#0D0D0D]/70 font-medium">
+                        <li>Mixed Veg Grilled Sizzler</li>
+                        <li>Mexican Fiesta Sizzler ★</li>
+                        <li>Paneer Stick Sizzler</li>
+                        <li>Chinese Sizzler</li>
+                        <li>Highway Special Sizzler</li>
+                        <li>Sizzling Mexican Tex-Mex</li>
+                    </ul>
+                </div>
             </div>
         </div>
 
-        <!-- TAB 2: MAINS & BREADS -->
+        <!-- TAB 2: MAINS & THALIS -->
         <div x-show="currentTab === 'mains'" class="grid grid-cols-1 md:grid-cols-3 gap-12" x-transition>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Rice Collections</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-md border border-[#0D0D0D]/5" data-tilt>
+                <img src="images/15.webp" alt="Rice Collection" class="w-full h-48 object-cover rounded-xl mb-4 pointer-events-none">
+                <h3 class="font-serif text-2xl font-medium text-[#0D0D0D] mb-4 border-b border-[#0D0D0D]/5 pb-2">Rice Specialties</h3>
+                <ul class="space-y-3 text-base text-[#0D0D0D]/70 font-medium">
                     <li>Steamed Basmati Rice</li>
                     <li>Jeera Rice</li>
                     <li>Dal Khichdi ★</li>
@@ -118,22 +124,25 @@
                     <li>Veg Pulao</li>
                     <li>Veg Biryani</li>
                     <li>Hyderabadi Veg Biryani</li>
-                    <li>Highway Special Dum Biryani ★ <span class="text-xs text-[#C5A880]/60 block">(Served with Raita)</span></li>
+                    <li>Highway Special Dum Biryani ★</li>
                 </ul>
             </div>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Tandoori Breads & Tawa</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
-                    <li>Plain Chapati / Butter Chapati</li>
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-md border border-[#0D0D0D]/5" data-tilt>
+                <img src="images/18.webp" alt="Tandoori Breads" class="w-full h-48 object-cover rounded-xl mb-4 pointer-events-none">
+                <h3 class="font-serif text-2xl font-medium text-[#0D0D0D] mb-4 border-b border-[#0D0D0D]/5 pb-2">Breads & Chapati</h3>
+                <ul class="space-y-2 text-sm text-[#0D0D0D]/70 font-medium grid grid-cols-1 md:grid-cols-2 gap-x-2">
+                    <li>Plain Chapati</li>
+                    <li>Butter Chapati</li>
                     <li>Butter Tawa Paratha</li>
                     <li>Tawa Aloo Paratha ★</li>
                     <li>Plain Roti / Butter Roti</li>
                     <li>Naan / Kulcha / Paratha</li>
-                    <li>Butter Naan / Kulcha / Paratha</li>
+                    <li>Butter Naan / Kulcha</li>
                     <li>Stuffed Naan / Kulcha</li>
-                    <li>Lachha Paratha</li>
+                    <li>Lchha Paratha</li>
                     <li>Hariyali Naan ★</li>
-                    <li>Garlic Naan / Chilli Garlic Naan</li>
+                    <li>Garlic Naan</li>
+                    <li>Chilli Garlic Naan</li>
                     <li>Cheese Naan</li>
                     <li>Cheese Chilli Garlic Naan ★</li>
                     <li>Missi Roti / Onion Kulcha</li>
@@ -141,85 +150,108 @@
                     <li>Rotis Basket</li>
                 </ul>
             </div>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Curated Combos & Thalis</h3>
-                <ul class="space-y-6 text-sm text-[#F7F5F0]/80">
-                    <li>
-                        <span class="block text-white font-medium">CHOLE KULCHE PLATTER ★</span>
-                        <span class="text-xs text-[#F7F5F0]/50">Chhole, 2 Kulche, Salad & Raita</span>
-                    </li>
-                    <li>
-                        <span class="block text-white font-medium">CHOLE BHATORE PLATTER</span>
-                        <span class="text-xs text-[#F7F5F0]/50">Chhole, 2 Bhatore, Salad & Raita</span>
-                    </li>
-                    <li>
-                        <span class="block text-white font-medium">HIGHWAY EXECUTIVE THALI</span>
-                        <span class="text-xs text-[#F7F5F0]/50">1 Veg. Subzi, 1 Paneer Subzi, Dal Fry, Jeera Rice, 3 Roti, Salad, Papad, Butter Milk & Sweet</span>
-                    </li>
-                </ul>
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-md border border-[#0D0D0D]/5 flex flex-col justify-between" data-tilt>
+                <div>
+                    <h3 class="font-serif text-2xl font-medium text-[#0D0D0D] mb-6 border-b border-[#0D0D0D]/5 pb-2">Premium Combos</h3>
+                    <div class="space-y-6 text-sm text-[#0D0D0D]/80">
+                        <div>
+                            <span class="block font-bold text-base text-[#C5A880]">CHOLE KULCHE PLATTER ★</span>
+                            <span class="text-xs text-[#0D0D0D]/50">Chhole, 2 Kulche, Salad & Raita</span>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-base text-[#C5A880]">CHOLE BHATORE PLATTER</span>
+                            <span class="text-xs text-[#0D0D0D]/50">Chhole, 2 Bhatore, Salad & Raita</span>
+                        </div>
+                        <div class="bg-[#F7F5F0] p-4 rounded-xl border border-[#0D0D0D]/5">
+                            <span class="block font-bold text-base text-[#4A1521]">HIGHWAY EXECUTIVE THALI</span>
+                            <span class="text-xs text-[#0D0D0D]/60 mt-1 block leading-relaxed">1 Veg. Subzi, 1 Paneer Subzi, Dal Fry, Jeera Rice, 3 Roti, Salad, Papad, Butter Milk & Sweet</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- TAB 3: GLOBAL CUISINES -->
-        <div x-show="currentTab === 'chinese-mexican'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Mexican Specials</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+        <!-- TAB 3: GLOBAL CUISINE -->
+        <div x-show="currentTab === 'global'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-xl border border-[#0D0D0D]/5" data-tilt>
+                <h3 class="font-serif text-3xl font-medium text-[#0D0D0D] mb-6 border-b border-[#0D0D0D]/5 pb-2">Mexican Specials</h3>
+                <ul class="space-y-3 text-base text-[#0D0D0D]/70 font-medium">
                     <li>Mexican Crunch Bhel ★</li>
                     <li>Mexican Rice with Salsa</li>
                     <li>Mexican Veg Hot Pot ★</li>
                     <li>Mexican Curry with Rice</li>
                     <li>Mexican Fried Rice / Corn Fried Rice</li>
-                    <li>Saut&eacute;ed Vegetable with Rice</li>
+                    <li>Sautéed Vegetable with Rice</li>
                     <li>Creamy White Sauce Pasta</li>
                     <li>Classic Red Sauce Pasta</li>
                 </ul>
             </div>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Chinese Cuisine</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-xl border border-[#0D0D0D]/5" data-tilt>
+                <img src="images/16.webp" alt="Chinese Cuisine" class="w-full h-48 object-cover rounded-xl mb-4 pointer-events-none">
+                <h3 class="font-serif text-3xl font-medium text-[#0D0D0D] mb-6 border-b border-[#0D0D0D]/5 pb-2">Chinese Cuisine</h3>
+                <ul class="space-y-3 text-base text-[#0D0D0D]/70 font-medium">
                     <li>Schezwan Fried Rice 🌶️ / Veg Fried Rice</li>
                     <li>Manchurian Fried Rice / Mushroom Fried Rice</li>
-                    <li>Chop Suey <span class="text-xs text-[#F7F5F0]/40">(Chinese / American)</span></li>
-                    <li>Gobi Manchurian / Veg Manchurian Gravy</li>
-                    <li>Veg Hakka Noodles / Schezwan Noodles 🌶️</li>
-                    <li>Manchurian Noodles</li>
-                    <li>Chilli Paneer Gravy</li>
-                    <li>Crispy Chinese Bhel ★</li>
+                    <li>Chop Suey (Chinese / American)</li>
+                    <li>Mushroom Fried Rice / Gobi Manchurian</li>
+                    <li>Veg Manchurian Gravy / Veg Hakka Noodles</li>
+                    <li>Schezwan Noodles 🌶️ / Manchurian Noodles</li>
+                    <li>Chilli Paneer Gravy / Crispy Chinese Bhel ★</li>
                     <li>Schezwan Triple Fried Rice</li>
                 </ul>
             </div>
         </div>
 
-        <!-- TAB 4: SWEETS & BEVERAGES -->
-        <div x-show="currentTab === 'refreshments'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Gourmet Ice Creams</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
+        <!-- TAB 4: SWEETS & DRINKS -->
+        <div x-show="currentTab === 'sweets'" class="grid grid-cols-1 md:grid-cols-2 gap-16" x-transition>
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-xl border border-[#0D0D0D]/5" data-tilt>
+                <img src="images/25.webp" alt="Ice Creams" class="w-full h-64 object-cover rounded-xl mb-4 pointer-events-none">
+                <h3 class="font-serif text-3xl font-medium text-[#0D0D0D] mb-6 border-b border-[#0D0D0D]/5 pb-2">Desserts & Ice Cream</h3>
+                <ul class="space-y-3 text-base text-[#0D0D0D]/70 font-medium">
+                    <li>Gulab Jamun (2 Pcs)</li>
+                    <li>Hot Gulab Jamun With Vanilla Ice Cream ★</li>
                     <li>Vanilla / Vanilla Brownie Dip</li>
-                    <li>Strawberry / Kaju Draksh</li>
-                    <li>Almond Carnival / Butterscotch</li>
-                    <li>Cookies & Cream / Chocolate Chips</li>
-                    <li>American Nuts / Kesar Pista / Rajbhog</li>
-                    <li>Cone / Candy</li>
+                    <li>Strawberry / Kaju Draksh / Almond Carnival</li>
+                    <li>Butterscotch / Cookies & Cream / Chocolate Chips</li>
+                    <li>American Nuts / Kesar Pista / Rajbhog / Cone / Candy</li>
                 </ul>
             </div>
-            <div>
-                <h3 class="font-serif text-2xl text-[#C5A880] mb-6 border-b thin-border pb-2">Desserts & Shakes</h3>
-                <ul class="space-y-4 text-sm text-[#F7F5F0]/80">
-                    <li>Gulab Jamun <span class="text-xs text-[#F7F5F0]/40">(2 Pcs)</span></li>
-                    <li>Hot Gulab Jamun With Vanilla Ice Cream ★</li>
-                    <li>Milkshake ★ <span class="text-xs text-[#F7F5F0]/50 block">(Vanilla / Strawberry / Mango / Chocolate / Butterscotch / Rajbhog / Cookies & Cream / Kesar Pista)</span></li>
-                    <li>Fresh Fruit Shake ★ <span class="text-xs text-[#F7F5F0]/50 block">(Banana / Watermelon / Chikoo)</span></li>
+            <div class="three-d-card bg-white p-8 rounded-2xl shadow-xl border border-[#0D0D0D]/5" data-tilt>
+                <img src="images/27.webp" alt="Beverages" class="w-full h-64 object-cover rounded-xl mb-4 pointer-events-none">
+                <h3 class="font-serif text-3xl font-medium text-[#0D0D0D] mb-6 border-b border-[#0D0D0D]/5 pb-2">Thick Shakes & Refreshers</h3>
+                <ul class="space-y-4 text-sm text-[#0D0D0D]/70 font-medium">
+                    <li>
+                        <span class="block text-base font-bold text-white">Milkshake ★</span>
+                        <span class="text-xs text-[#0D0D0D]/50">Vanilla, Strawberry, Mango, Chocolate, Butterscotch, Rajbhog, Cookies & Cream, Kesar Pista</span>
+                    </li>
+                    <li>
+                        <span class="block text-base font-bold text-white">Fresh Fruit Shake ★</span>
+                        <span class="text-xs text-[#0D0D0D]/50">Banana, Watermelon, Chikoo</span>
+                    </li>
                 </ul>
             </div>
         </div>
     </section>
 
     <!-- FOOTER -->
-    <footer class="py-12 border-t thin-border text-center text-[10px] tracking-[0.2em] uppercase text-[#F7F5F0]/30 bg-[#0A0A0A]">
-        <p>© 2026 THE HIGHWAY EATS. Engineered for Absolute Purity.</p>
+    <footer class="bg-[#F7F5F0] text-[#0D0D0D]/50 text-xs py-12 border-t border-[#0D0D0D]/10 text-center">
+        <p>© 2026 THE HIGHWAY EATS. Engineered with 3D Parallax Architecture.</p>
     </footer>
+
+    <!-- 3D INTERACTIVE TILT ENGINE SCRIPT -->
+    <script>
+        document.querySelectorAll('[data-tilt]').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const box = card.getBoundingClientRect();
+                const x = e.clientX - box.left - (box.width / 2);
+                const y = e.clientY - box.top - (box.height / 2);
+                card.style.transform = `rotateY(${x / 14}deg) rotateX(${-y / 14}deg) scale(1.01)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'rotateY(0deg) rotateX(0deg) scale(1)';
+            });
+        });
+    </script>
 
 </body>
 </html>
